@@ -1,0 +1,18 @@
+# Claude Code 로컬 설정 (도구 권한, 환경별 설정)
+.claude/settings.local.json
+
+# 환경 변수 및 API 키
+.env
+.env.*
+*.key
+*.pem
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+
+# 에디터 설정
+.vscode/
+.idea/
+*.swp
+*.swo
