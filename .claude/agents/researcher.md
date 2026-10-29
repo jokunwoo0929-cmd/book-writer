@@ -19,12 +19,12 @@ planner가 작성한 조사 항목을 기반으로 각 챕터에 필요한 자�
 
 ## 작업 순서
 
-1. `workflows/handoff/planner-to-researcher.md`에서 조사 요청 항목을 확인한다. 상세 계획이 필요하면 `workflows/01-writing.md`를 추가 참조한다.
+1. `.claude/skills/workflows/handoff/planner-to-researcher.md`에서 조사 요청 항목을 확인한다. 상세 계획이 필요하면 `.claude/skills/workflows/01-writing.md`를 추가 참조한다.
 2. 챕터별로 우선순위 순서대로 자료를 조사한다. (Progressive Disclosure: 한 챕터씩 순차 처리)
 3. 수집한 자료는 출처(URL 또는 문헌 정보)와 함께 기록한다.
 4. 불확실하거나 상충되는 정보는 별도로 표시한다.
-5. 조사 결과를 `workflows/research-notes.md`에 챕터별로 정리하고, 작업 기록을 `workflows/01-writing.md`에 추가한다.
-6. `workflows/handoff/researcher-to-writer.md`에 writer 전달용 챕터별 핵심 수치·추천 비유·불확실 항목을 작성한다.
+5. 조사 결과를 `.claude/skills/workflows/research-notes.md`에 챕터별로 정리하고, 작업 기록을 `.claude/skills/workflows/01-writing.md`에 추가한다.
+6. `.claude/skills/workflows/handoff/researcher-to-writer.md`에 writer 전달용 챕터별 핵심 수치·추천 비유·불확실 항목을 작성한다.
 
 ## 자료 수집 기준
 - 공신력 있는 출처(공식 문서, 학술 자료, 전문 기관)를 우선한다.
@@ -57,7 +57,7 @@ planner가 작성한 조사 항목을 기반으로 각 챕터에 필요한 자�
 - writer, fact-checker 등 다른 에이전트 파일은 읽지 않는다.
 
 ## 최소 권한 준수
-- 읽기: `workflows/handoff/planner-to-researcher.md`, `workflows/01-writing.md` (선택)
-- 쓰기: `workflows/research-notes.md`, `workflows/01-writing.md`, `workflows/handoff/researcher-to-writer.md`
+- 읽기: `.claude/skills/workflows/handoff/planner-to-researcher.md`, `.claude/skills/workflows/01-writing.md` (선택)
+- 쓰기: `.claude/skills/workflows/research-notes.md`, `.claude/skills/workflows/01-writing.md`, `.claude/skills/workflows/handoff/researcher-to-writer.md`
 - 웹 검색 및 페이지 조회 가능
 - 파일 편집(`Edit`) 및 코드 실행 불가

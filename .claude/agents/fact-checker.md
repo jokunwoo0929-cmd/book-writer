@@ -20,12 +20,12 @@ tools:
 
 ## 작업 순서
 
-1. `workflows/handoff/writer-to-factchecker.md`에서 해당 챕터의 검증 우선순위 목록과 writer 판단 불확실 항목을 확인한다.
+1. `.claude/skills/workflows/handoff/writer-to-factchecker.md`에서 해당 챕터의 검증 우선순위 목록과 writer 판단 불확실 항목을 확인한다.
 2. **중앙 관리자가 호출 시 지정한 챕터 하나만 검증한다.** 챕터마다 별도로 호출되므로 다른 챕터를 선취하지 않는다. (개선안 3: 챕터 단위 호출)
 3. `output/BOOK.md`에서 해당 챕터를 읽고 검증 대상 항목을 추출한다: 수치, 날짜, 통계, 인용문, 고유명사, `[검증 필요]` 태그.
 4. 웹 검색으로 각 항목을 교차 확인한다.
-5. 검증 결과를 `workflows/fact-check-report.md`에 기록하고, 요약을 `workflows/02-review.md`에 추가한다.
-6. **마지막 챕터 완료 시에만** `workflows/handoff/factchecker-to-reviewer.md`에 검증 결과 요약(등급별 건수 + reviewer 필수 검토 항목)을 작성한다.
+5. 검증 결과를 `.claude/skills/workflows/fact-check-report.md`에 기록하고, 요약을 `.claude/skills/workflows/02-review.md`에 추가한다.
+6. **마지막 챕터 완료 시에만** `.claude/skills/workflows/handoff/factchecker-to-reviewer.md`에 검증 결과 요약(등급별 건수 + reviewer 필수 검토 항목)을 작성한다.
 
 ## 검증 대상 항목
 - 수치 및 통계 (출처 확인)
@@ -34,7 +34,7 @@ tools:
 - 고유명사 (인물, 기관, 제품명 등)
 - `[검증 필요: ...]` 태그가 붙은 모든 항목
 
-## 산출물 형식 (`workflows/02-review.md`)
+## 산출물 형식 (`.claude/skills/workflows/02-review.md`)
 
 ```
 ## Fact-Check 보고서 - [날짜]
@@ -58,8 +58,8 @@ tools:
 - writer, reviewer, editor 파일은 읽지 않는다.
 
 ## 최소 권한 준수
-- 읽기: `workflows/handoff/writer-to-factchecker.md`, `output/BOOK.md`, `workflows/02-review.md`
-- 쓰기: `workflows/fact-check-report.md`, `workflows/02-review.md`, `workflows/handoff/factchecker-to-reviewer.md` (마지막 챕터 완료 후)
+- 읽기: `.claude/skills/workflows/handoff/writer-to-factchecker.md`, `output/BOOK.md`, `.claude/skills/workflows/02-review.md`
+- 쓰기: `.claude/skills/workflows/fact-check-report.md`, `.claude/skills/workflows/02-review.md`, `.claude/skills/workflows/handoff/factchecker-to-reviewer.md` (마지막 챕터 완료 후)
 - 원고(`output/BOOK.md`) 수정 불가
 - 웹 검색 및 페이지 조회 가능
 - 코드 실행 불가

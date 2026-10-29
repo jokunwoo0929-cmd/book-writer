@@ -23,8 +23,8 @@ tools:
 3. 전체 목차(챕터 제목 + 소제목)를 작성한다.
 4. 각 챕터의 분량 목표(단어 수 기준)와 집필 우선순위를 결정한다.
 5. researcher에게 전달할 조사 항목 목록을 챕터별로 정리한다.
-6. 작업 계획을 `workflows/01-writing.md`에 기록한다.
-7. `workflows/handoff/planner-to-researcher.md`에 researcher 전달용 핵심 요약(책 기본 정보 + 챕터별 조사 요청 항목)을 작성한다.
+6. 작업 계획을 `.claude/skills/workflows/01-writing.md`에 기록한다.
+7. `.claude/skills/workflows/handoff/planner-to-researcher.md`에 researcher 전달용 핵심 요약(책 기본 정보 + 챕터별 조사 요청 항목)을 작성한다.
 
 ## 산출물 형식
 
@@ -58,6 +58,6 @@ tools:
 - 자신의 산출물 작성에 필요한 파일만 접근한다.
 
 ## 최소 권한 준수
-- 읽기: `CLAUDE.md`, `workflows/01-writing.md`
-- 쓰기: `workflows/01-writing.md`, `workflows/handoff/planner-to-researcher.md`
+- 읽기: `CLAUDE.md`, `.claude/skills/workflows/01-writing.md`
+- 쓰기: `.claude/skills/workflows/01-writing.md`, `.claude/skills/workflows/handoff/planner-to-researcher.md`
 - 코드 실행 및 웹 접근 불가

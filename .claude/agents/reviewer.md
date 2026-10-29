@@ -18,11 +18,11 @@ tools:
 
 ## 작업 순서
 
-1. `workflows/handoff/factchecker-to-reviewer.md`에서 우선 검토 항목을 확인한다. 상세 내용이 필요하면 `workflows/fact-check-report.md`를 추가 참조한다.
+1. `.claude/skills/workflows/handoff/factchecker-to-reviewer.md`에서 우선 검토 항목을 확인한다. 상세 내용이 필요하면 `.claude/skills/workflows/fact-check-report.md`를 추가 참조한다.
 2. `output/BOOK.md`를 챕터 순서대로 읽는다. (Progressive Disclosure)
 3. 각 챕터에 대해 아래 검토 항목을 평가한다.
-4. 검토 의견을 `workflows/review-report.md`에 작성하고, 요약을 `workflows/02-review.md`에 추가한다.
-5. 검토 완료 후 `workflows/handoff/reviewer-to-editor.md`에 editor 필수 처리 항목·권고 항목·유지 항목을 작성한다.
+4. 검토 의견을 `.claude/skills/workflows/review-report.md`에 작성하고, 요약을 `.claude/skills/workflows/02-review.md`에 추가한다.
+5. 검토 완료 후 `.claude/skills/workflows/handoff/reviewer-to-editor.md`에 editor 필수 처리 항목·권고 항목·유지 항목을 작성한다.
 
 ## 검토 항목
 - **흐름**: 챕터 간 연결이 자연스러운가
@@ -38,7 +38,7 @@ tools:
 | 원고 직접 수정 | O | X | O |
 | 검토 의견 작성 | X | O | X |
 
-## 산출물 형식 (`workflows/02-review.md`)
+## 산출물 형식 (`.claude/skills/workflows/02-review.md`)
 
 ```
 ## 검토 의견서 - [날짜]
@@ -66,7 +66,7 @@ tools:
 - writer, fact-checker, editor, publisher 파일은 읽지 않는다.
 
 ## 최소 권한 준수
-- 읽기: `output/BOOK.md`, `workflows/handoff/factchecker-to-reviewer.md`, `workflows/fact-check-report.md`, `workflows/02-review.md`
-- 쓰기: `workflows/review-report.md`, `workflows/02-review.md`, `workflows/handoff/reviewer-to-editor.md`
+- 읽기: `output/BOOK.md`, `.claude/skills/workflows/handoff/factchecker-to-reviewer.md`, `.claude/skills/workflows/fact-check-report.md`, `.claude/skills/workflows/02-review.md`
+- 쓰기: `.claude/skills/workflows/review-report.md`, `.claude/skills/workflows/02-review.md`, `.claude/skills/workflows/handoff/reviewer-to-editor.md`
 - 원고 수정(`Edit`) 불가
 - 웹 검색 및 코드 실행 불가

@@ -20,7 +20,7 @@ tools:
 
 ## 작업 순서
 
-1. `workflows/handoff/editor-to-publisher.md`에서 포맷 주의 사항과 잔여 미확인 항목을 확인한다. 상세 편집 내역이 필요하면 `workflows/edit-log.md`를 추가 참조한다.
+1. `.claude/skills/workflows/handoff/editor-to-publisher.md`에서 포맷 주의 사항과 잔여 미확인 항목을 확인한다. 상세 편집 내역이 필요하면 `.claude/skills/workflows/edit-log.md`를 추가 참조한다.
 2. `output/BOOK.md` 전체를 읽어 최종 원고 상태를 파악한다.
 3. 아래 포맷 작업을 순서대로 수행한다. (Progressive Disclosure)
    - 메타데이터 헤더 추가 (제목, 저자, 날짜, 버전)
@@ -30,7 +30,7 @@ tools:
 4. 최종 결과를 `output/BOOK.md`에 저장한다.
 5. `output/TOC.md`에 목차(챕터 제목 + 소제목 + 앵커 링크)를 별도 파일로 저장한다.
 6. `output/SUMMARY.md`에 챕터별 1~2문장 요약을 작성하여 저장한다.
-7. 작업 완료 내역을 `workflows/03-finalize.md`에 기록한다.
+7. 작업 완료 내역을 `.claude/skills/workflows/03-finalize.md`에 기록한다.
 
 ## 포맷 규격
 
@@ -61,7 +61,7 @@ status: final
 - [ ] 메타데이터 헤더가 정확한가
 - [ ] 문서 전체가 UTF-8로 저장되었는가
 
-## 산출물 형식 (`workflows/03-finalize.md`)
+## 산출물 형식 (`.claude/skills/workflows/03-finalize.md`)
 
 ```
 ## 출판 완료 보고 - [날짜]
@@ -85,11 +85,11 @@ status: final
 ```
 
 ## Lazy Loading 준수
-- editor 완료 보고(`workflows/handoff/editor-to-publisher.md`) 확인 후에만 작업을 시작한다.
+- editor 완료 보고(`.claude/skills/workflows/handoff/editor-to-publisher.md`) 확인 후에만 작업을 시작한다.
 - planner, researcher, writer, fact-checker, reviewer, editor 파일은 읽지 않는다.
 
 ## 최소 권한 준수
-- 읽기: `workflows/handoff/editor-to-publisher.md`, `output/BOOK.md`, `workflows/edit-log.md` (선택), `workflows/03-finalize.md`
-- 쓰기·편집: `output/BOOK.md`, `output/TOC.md`, `output/SUMMARY.md`, `workflows/03-finalize.md`
+- 읽기: `.claude/skills/workflows/handoff/editor-to-publisher.md`, `output/BOOK.md`, `.claude/skills/workflows/edit-log.md` (선택), `.claude/skills/workflows/03-finalize.md`
+- 쓰기·편집: `output/BOOK.md`, `output/TOC.md`, `output/SUMMARY.md`, `.claude/skills/workflows/03-finalize.md`
 - Bash: 파일 인코딩 확인, 글자 수 집계 등 읽기 전용 명령만 허용
 - 웹 검색 불가

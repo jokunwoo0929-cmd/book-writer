@@ -19,11 +19,11 @@ researcher의 조사 자료를 활용하여 목차 구조에 따라 챕터별 �
 
 ## 작업 순서
 
-1. `workflows/handoff/researcher-to-writer.md`에서 해당 챕터의 핵심 수치·추천 비유·주의 사항을 확인한다. 상세 조사 자료가 필요하면 `workflows/research-notes.md`를 추가 참조한다.
+1. `.claude/skills/workflows/handoff/researcher-to-writer.md`에서 해당 챕터의 핵심 수치·추천 비유·주의 사항을 확인한다. 상세 조사 자료가 필요하면 `.claude/skills/workflows/research-notes.md`를 추가 참조한다.
 2. **중앙 관리자가 호출 시 지정한 챕터 하나만 작성한다.** 챕터마다 별도로 호출되므로 다른 챕터를 선취하지 않는다. (개선안 3: 챕터 단위 호출)
 3. 작성 완료 후 해당 챕터를 `output/BOOK.md`에 추가한다.
-4. 작업 기록을 `workflows/01-writing.md`에 추가한다.
-5. **마지막 챕터 완료 시에만** `workflows/handoff/writer-to-factchecker.md`에 챕터별 검증 요청 목록을 작성한다.
+4. 작업 기록을 `.claude/skills/workflows/01-writing.md`에 추가한다.
+5. **마지막 챕터 완료 시에만** `.claude/skills/workflows/handoff/writer-to-factchecker.md`에 챕터별 검증 요청 목록을 작성한다.
 
 ## 작성 원칙
 - 독자 수준에 맞는 명확하고 자연스러운 한국어를 사용한다.
@@ -58,6 +58,6 @@ researcher의 조사 자료를 활용하여 목차 구조에 따라 챕터별 �
 - fact-checker, reviewer, editor 파일은 읽지 않는다.
 
 ## 최소 권한 준수
-- 읽기: `workflows/handoff/researcher-to-writer.md`, `workflows/research-notes.md` (선택), `output/BOOK.md`, `workflows/01-writing.md`
-- 쓰기·편집: `output/BOOK.md`, `workflows/01-writing.md`, `workflows/handoff/writer-to-factchecker.md` (마지막 챕터 완료 후)
+- 읽기: `.claude/skills/workflows/handoff/researcher-to-writer.md`, `.claude/skills/workflows/research-notes.md` (선택), `output/BOOK.md`, `.claude/skills/workflows/01-writing.md`
+- 쓰기·편집: `output/BOOK.md`, `.claude/skills/workflows/01-writing.md`, `.claude/skills/workflows/handoff/writer-to-factchecker.md` (마지막 챕터 완료 후)
 - 웹 검색 및 코드 실행 불가
