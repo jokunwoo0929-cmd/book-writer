@@ -26,7 +26,7 @@
 
 ### 출력 파일
 - `output/BOOK.md` — 목차 섹션만 작성 (본문 없음)
-- `workflows/handoff/planner-to-researcher.md` — researcher 전달용 핵심 요약
+- `.claude/skills/workflows/handoff/planner-to-researcher.md` — researcher 전달용 핵심 요약
 - 이 파일(`01-writing.md`) 하단에 작업 기록 추가
 
 ### 다음 단계 진행 조건
@@ -51,22 +51,22 @@
 `researcher`
 
 ### 입력 자료
-- `workflows/handoff/planner-to-researcher.md` — planner가 작성한 조사 요청 항목 요약
-- `workflows/01-writing.md` — 상세 계획 (선택)
+- `.claude/skills/workflows/handoff/planner-to-researcher.md` — planner가 작성한 조사 요청 항목 요약
+- `.claude/skills/workflows/01-writing.md` — 상세 계획 (선택)
 
 ### 작업 순서
-1. `workflows/handoff/planner-to-researcher.md`에서 조사 요청 항목을 확인한다.
+1. `.claude/skills/workflows/handoff/planner-to-researcher.md`에서 조사 요청 항목을 확인한다.
 2. 각 챕터별로 웹 검색 및 자료 조사를 수행한다.
 3. 수집한 자료는 출처(URL, 문서명, 날짜)와 함께 정리한다.
 4. 수치, 통계, 인용구 등 검증이 필요한 정보는 별도로 표시한다.
-5. 챕터별 조사 결과를 `workflows/research-notes.md`에 정리한다.
+5. 챕터별 조사 결과를 `.claude/skills/workflows/research-notes.md`에 정리한다.
 6. 불확실하거나 상충하는 정보는 `[미확인]` 태그를 붙여 명시한다.
-7. `workflows/handoff/researcher-to-writer.md`에 writer 전달용 핵심 요약을 작성한다.
+7. `.claude/skills/workflows/handoff/researcher-to-writer.md`에 writer 전달용 핵심 요약을 작성한다.
 8. 작업 기록을 이 파일 하단에 추가한다.
 
 ### 출력 파일
-- `workflows/research-notes.md` — 챕터별 조사 결과 및 출처 목록
-- `workflows/handoff/researcher-to-writer.md` — writer 전달용 핵심 요약
+- `.claude/skills/workflows/research-notes.md` — 챕터별 조사 결과 및 출처 목록
+- `.claude/skills/workflows/handoff/researcher-to-writer.md` — writer 전달용 핵심 요약
 - 이 파일(`01-writing.md`) 하단에 작업 기록 추가
 
 ### 다음 단계 진행 조건
@@ -91,24 +91,24 @@
 `writer`
 
 ### 입력 자료
-- `workflows/handoff/researcher-to-writer.md` — 챕터별 핵심 수치·비유·주의 사항
-- `workflows/research-notes.md` — 상세 조사 자료 (선택)
+- `.claude/skills/workflows/handoff/researcher-to-writer.md` — 챕터별 핵심 수치·비유·주의 사항
+- `.claude/skills/workflows/research-notes.md` — 상세 조사 자료 (선택)
 
 ### 작업 순서
 > **중앙 관리자**: writer를 챕터마다 별도 호출한다. 단일 호출로 전체 챕터를 일괄 처리하지 않는다.
 
-1. `workflows/handoff/researcher-to-writer.md`에서 해당 챕터의 핵심 수치·비유·주의 사항을 확인한다.
+1. `.claude/skills/workflows/handoff/researcher-to-writer.md`에서 해당 챕터의 핵심 수치·비유·주의 사항을 확인한다.
 2. **호출 시 지정된 챕터 하나만** 본문을 작성한다.
 3. 각 챕터 첫머리에 "이 챕터를 쓰는 이유(Why)"를 한 줄로 명시한다.
 4. 인용·수치는 출처를 각주 또는 인라인으로 표기한다.
 5. `[미확인]` 자료를 사용할 경우 본문에도 불확실성을 명시한다.
 6. 완성된 챕터를 `output/BOOK.md`에 추가한다.
-7. **마지막 챕터 완료 후** `workflows/handoff/writer-to-factchecker.md`에 검증 요청 목록을 작성한다.
+7. **마지막 챕터 완료 후** `.claude/skills/workflows/handoff/writer-to-factchecker.md`에 검증 요청 목록을 작성한다.
 8. 작업 기록을 이 파일 하단에 추가한다.
 
 ### 출력 파일
 - `output/BOOK.md` — 목차 + 전체 챕터 초고 (챕터별 누적)
-- `workflows/handoff/writer-to-factchecker.md` — 검증 요청 목록 (마지막 챕터 완료 후)
+- `.claude/skills/workflows/handoff/writer-to-factchecker.md` — 검증 요청 목록 (마지막 챕터 완료 후)
 
 ### 다음 단계 진행 조건
 - [ ] 목차의 모든 챕터와 소제목에 본문이 작성되었다.
@@ -155,14 +155,14 @@
 
 ## [2026-10-24] researcher 작업 완료
 
-- 작업 내용: 챕터 1~3의 모든 조사 항목(총 9개)에 대해 웹 검색 및 출처 확인을 완료하고 workflows/research-notes.md에 챕터별 조사 결과를 정리함.
+- 작업 내용: 챕터 1~3의 모든 조사 항목(총 9개)에 대해 웹 검색 및 출처 확인을 완료하고 .claude/skills/workflows/research-notes.md에 챕터별 조사 결과를 정리함.
 - 주요 결정 사항:
   - 챕터 1: LPS 효율 20~50% vs SMPS 65~95% 수치 확보 (출처 2개 교차 확인). 한국 220V/60Hz 규격 및 주요 기기 요구 전압(스마트폰 5V, 노트북 19V, LED 12V/24V) 확인.
   - 챕터 2: SMPS 스위칭 주파수 일반 범위 20kHz~1MHz (소비자용 50~500kHz) 확인. 트랜스포머·다이오드·캐패시터 역할을 비전공자 눈높이에서 정리. PWM 듀티 사이클 개념과 팬(Fan) 속도 제어 비유 사례 확보.
   - 챕터 3: SMPS 응용 제품 5가지 이상 확인. EMI 전도성·방사성 구분 및 발생 원인 정리. KC·UL·CE 인증 각각의 적용 지역과 방식 차이 확인.
   - LPS 효율 하한값(출처마다 20~40%로 편차)은 [미확인] 수준으로 처리하고 writer에게 보수적 표현 권고.
 - 다음 에이전트 전달 사항 (writer):
-  - 조사 자료 파일: workflows/research-notes.md
+  - 조사 자료 파일: .claude/skills/workflows/research-notes.md
   - 비유 소재 준비됨: PWM(선풍기 ON/OFF 반복), 다이오드(일방통행 밸브), 캐패시터(전기 저수지), EMI(라디오 잡음)
   - 챕터별 강조 포인트 및 주의 사항은 각 챕터 "writer 전달 사항" 섹션 참조
   - [미확인] 항목: LPS 효율 하한 수치(출처 편차 있음) — 본문에 "조건에 따라 다를 수 있음" 병기 권장
@@ -190,7 +190,7 @@
   - 목차 구조는 개념 도입(1장) → 작동 원리(2장) → 응용·안전(3장) 순서 유지 (Why-First 원칙 적용).
   - 집필 방침: 전문 수식 배제, 비유 중심 서술, 각 챕터 첫머리에 Why 문장 포함.
 - 다음 에이전트 전달 사항 (researcher):
-  - 인수인계 파일: workflows/handoff/planner-to-researcher.md
+  - 인수인계 파일: .claude/skills/workflows/handoff/planner-to-researcher.md
   - 챕터 1 조사 항목 4개 (AC/DC 비유, 전압 규격, LPS·SMPS 효율 비교, 발열 메커니즘) — 우선순위 상
   - 챕터 2 조사 항목 4개 (스위칭 주파수, PWM 비유, 부품 역할, 소형화 원리) — 우선순위 상
   - 챕터 3 조사 항목 3개 (응용 사례, EMI 원인, KC·CE·UL 인증) — 우선순위 중
@@ -198,14 +198,14 @@
 
 ## [2026-10-24] researcher 작업 완료 (2차 조사 — 분량 1,500자 목표)
 
-- 작업 내용: planner-to-researcher.md의 11개 조사 항목 전체에 대해 웹 검색(WebSearch) 및 페이지 조회(WebFetch)를 수행하여 챕터 1~3 자료를 보강함. 조사 결과를 workflows/research-notes.md에 챕터별 "[2차 조사]" 섹션으로 추가하고, workflows/handoff/researcher-to-writer.md에 writer 전달용 핵심 요약을 작성함.
+- 작업 내용: planner-to-researcher.md의 11개 조사 항목 전체에 대해 웹 검색(WebSearch) 및 페이지 조회(WebFetch)를 수행하여 챕터 1~3 자료를 보강함. 조사 결과를 .claude/skills/workflows/research-notes.md에 챕터별 "[2차 조사]" 섹션으로 추가하고, .claude/skills/workflows/handoff/researcher-to-writer.md에 writer 전달용 핵심 요약을 작성함.
 - 주요 결정 사항:
   - 챕터 1: AC/DC 비유(강물/파도), 한국 220V/60Hz, 기기 요구 전압(스마트폰 5~9V, 노트북 19~20V, LED 12V/24V), LPS 30~60%·SMPS 65~95% 효율 수치 2개 이상 출처 교차 확인 완료. LPS 하한 편차 [미확인] 처리.
   - 챕터 2: 스위칭 주파수(소비자용 50~500kHz, 최대 2MHz), PWM 선풍기 비유, 트랜스포머·다이오드·캐패시터 비유(기어변속/일방통행 수문/전기 저수지), 고주파일수록 트랜스포머 소형화 원리 확인 완료.
   - 챕터 3: SMPS 응용 제품 7가지 확인, EMI 전도성·방사성 구분 확인, KC(한국 필수·시험 검증)·CE(EU 필수·자기 선언)·UL(미국 사실상 필수·제3자 검증) 인증 차이 확인 완료.
   - [미확인] 항목 2개: LPS 효율 하한(30~40% vs 40~60% 출처 편차), 스위칭 주파수 상한(기술 발전으로 변동). 전체 조사 항목 대비 약 18%로 20% 기준 이내.
 - 다음 에이전트 전달 사항 (writer):
-  - 인수인계 파일: workflows/handoff/researcher-to-writer.md
+  - 인수인계 파일: .claude/skills/workflows/handoff/researcher-to-writer.md
   - 비유 소재 7종 확정 (직류/교류/PWM/트랜스포머/다이오드/캐패시터/EMI)
   - [미확인] 항목: LPS 효율 하한 — "30~60%" 범위 표현 및 "조건에 따라 차이 있음" 단서 병기 권장
   - 분량 배분: 챕터 1 약 600자, 챕터 2 약 600자, 챕터 3 약 300자
@@ -243,5 +243,5 @@
   - CE 마크 세부 절차 불확실성은 [검증 필요] 태그로 명시. UL 법적 의무 여부도 단서 병기.
   - 목표 분량 약 300자에 맞게 작성.
 - 다음 에이전트 전달 사항 (fact-checker):
-  - 3챕터 전체 초고 완성. workflows/handoff/writer-to-factchecker.md에 챕터별 검증 요청 목록 작성 완료.
+  - 3챕터 전체 초고 완성. .claude/skills/workflows/handoff/writer-to-factchecker.md에 챕터별 검증 요청 목록 작성 완료.
   - [검증 필요] 처리 항목: CE 마크 제3자 검증 조건, UL 법적 의무 범위.

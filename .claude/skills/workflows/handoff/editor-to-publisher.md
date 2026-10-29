@@ -1,6 +1,6 @@
 # 인수인계: editor → publisher
 
-> 이 파일의 목적: publisher가 포맷 작업 전에 원고의 최종 상태와 특이 사항을 빠르게 파악할 수 있도록 한다. 전체 편집 로그(`workflows/edit-log.md`)를 읽지 않아도 출판 준비 상태를 파악할 수 있도록 압축한다.
+> 이 파일의 목적: publisher가 포맷 작업 전에 원고의 최종 상태와 특이 사항을 빠르게 파악할 수 있도록 한다. 전체 편집 로그(`.claude/skills/workflows/edit-log.md`)를 읽지 않아도 출판 준비 상태를 파악할 수 있도록 압축한다.
 
 ---
 

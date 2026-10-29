@@ -1,6 +1,6 @@
 # 인수인계: fact-checker → reviewer
 
-> 이 파일의 목적: reviewer가 검토 시 반드시 확인해야 할 사실 오류·불확실 항목을 미리 파악할 수 있도록 한다. 전체 검증 보고서(`workflows/fact-check-report.md`)를 읽지 않아도 핵심 사항을 파악할 수 있도록 압축한다.
+> 이 파일의 목적: reviewer가 검토 시 반드시 확인해야 할 사실 오류·불확실 항목을 미리 파악할 수 있도록 한다. 전체 검증 보고서(`.claude/skills/workflows/fact-check-report.md`)를 읽지 않아도 핵심 사항을 파악할 수 있도록 압축한다.
 
 ---
 
@@ -68,7 +68,7 @@
 
 4. **이전 v1에서 지적된 주요 수정 사항 3건(노트북 전압, LPS 효율, 전자레인지 비유)은 모두 v2에서 올바르게 반영되었음을 확인했다.** 해당 항목들을 재검토할 필요는 없다.
 
-5. **세부 검증 보고서는 `workflows/fact-check-report.md`에 챕터별로 기록되어 있다.** 필요 시 출처 URL 및 구체적인 판정 근거를 참조할 수 있다.
+5. **세부 검증 보고서는 `.claude/skills/workflows/fact-check-report.md`에 챕터별로 기록되어 있다.** 필요 시 출처 URL 및 구체적인 판정 근거를 참조할 수 있다.
 
 ---
 

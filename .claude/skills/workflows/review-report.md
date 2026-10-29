@@ -98,7 +98,7 @@
 
 - 검토 대상: `output/BOOK.md` (v2 — editor 수정 반영본, fact-checker 재검증 완료본)
 - fact-checker 재검증 결과: 사실 오류 0건, 조건부 정확 4건(단서 병기로 허용 범위), 잔존 [검증 필요] 태그 1건(3.2절 CE 마크)
-- 참조 파일: `workflows/handoff/factchecker-to-reviewer.md`
+- 참조 파일: `.claude/skills/workflows/handoff/factchecker-to-reviewer.md`
 
 ---
 

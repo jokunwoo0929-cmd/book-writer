@@ -13,9 +13,9 @@
 `publisher`
 
 ### 입력 자료
-- `workflows/handoff/editor-to-publisher.md` — 편집 완료 상태·포맷 주의 사항
+- `.claude/skills/workflows/handoff/editor-to-publisher.md` — 편집 완료 상태·포맷 주의 사항
 - `editor`가 수정한 최종 원고 (`output/BOOK.md`)
-- 수정 내역 로그 (`workflows/edit-log.md`) — 선택
+- 수정 내역 로그 (`.claude/skills/workflows/edit-log.md`) — 선택
 
 ### 작업 순서
 
@@ -25,7 +25,7 @@
    - 문장 부호, 띄어쓰기, 맞춤법
    - 목차와 실제 챕터 제목·순서의 일치 여부
    - 각주·출처 표기의 누락 여부
-2. 점검 결과를 `workflows/final-check.md`에 기록한다.
+2. 점검 결과를 `.claude/skills/workflows/final-check.md`에 기록한다.
 
 #### 7-2. 포맷 정리
 3. 목차를 자동 참조 가능한 형태로 정리한다 (Markdown 앵커 링크).
@@ -47,7 +47,7 @@
 - `output/BOOK.md` — 최종 출판본 (포맷 완성)
 - `output/TOC.md` — 목차 독립 파일
 - `output/SUMMARY.md` — 챕터별 요약 파일
-- `workflows/final-check.md` — 최종 점검 결과
+- `.claude/skills/workflows/final-check.md` — 최종 점검 결과
 - 이 파일(`03-finalize.md`) 하단에 작업 기록 추가
 
 ### 완료 조건
@@ -106,11 +106,11 @@
 
 ## [2026-10-24] publisher 작업 완료 (1차)
 
-- 작업 내용: `output/BOOK.md` 최종본을 기준으로 품질 점검 및 출판 포맷 작업 수행. 메타데이터 헤더 추가, 목차-본문 소제목 불일치 5건 수정(목차를 본문 기준으로 통일), 편집용 메타데이터("핵심 메시지", "예상 분량") 제거, `<!-- 이하 본문 -->` HTML 주석 제거, 목차 앵커 링크 추가, 책 첫 페이지 작성 날짜·AI 에이전트 협업 시스템 표기 삽입. 최종 점검 결과를 `workflows/final-check.md`에 기록.
+- 작업 내용: `output/BOOK.md` 최종본을 기준으로 품질 점검 및 출판 포맷 작업 수행. 메타데이터 헤더 추가, 목차-본문 소제목 불일치 5건 수정(목차를 본문 기준으로 통일), 편집용 메타데이터("핵심 메시지", "예상 분량") 제거, `<!-- 이하 본문 -->` HTML 주석 제거, 목차 앵커 링크 추가, 책 첫 페이지 작성 날짜·AI 에이전트 협업 시스템 표기 삽입. 최종 점검 결과를 `.claude/skills/workflows/final-check.md`에 기록.
 - 주요 결정 사항:
   - 목차 소제목을 editor가 의문문으로 통일한 본문 소제목 기준으로 맞춤 (내용 수정 없음, 형식 통일).
   - `[검증 필요]` 태그 없음 확인. `[미확인]` 항목은 editor 단계에서 이미 처리된 상태.
-  - 인덕터(코일) 항목 미수록은 내용상 사항이므로 직접 수정하지 않고 `workflows/final-check.md`에 기록만 함.
+  - 인덕터(코일) 항목 미수록은 내용상 사항이므로 직접 수정하지 않고 `.claude/skills/workflows/final-check.md`에 기록만 함.
 - 다음 에이전트 전달 사항: (없음 — 최종 단계)
 - 출판 완료 선언: `output/BOOK.md` 버전 1.0.0, 상태 final로 출판 완료.
 

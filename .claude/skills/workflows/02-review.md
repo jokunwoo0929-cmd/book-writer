@@ -14,13 +14,13 @@
 `fact-checker`
 
 ### 입력 자료
-- `workflows/handoff/writer-to-factchecker.md` — 챕터별 검증 우선순위 목록
+- `.claude/skills/workflows/handoff/writer-to-factchecker.md` — 챕터별 검증 우선순위 목록
 - `output/BOOK.md` — 초고 본문
 
 ### 작업 순서
 > **중앙 관리자**: fact-checker를 챕터마다 별도 호출한다. 단일 호출로 전체 챕터를 일괄 처리하지 않는다.
 
-1. `workflows/handoff/writer-to-factchecker.md`에서 해당 챕터의 검증 우선순위 목록을 확인한다.
+1. `.claude/skills/workflows/handoff/writer-to-factchecker.md`에서 해당 챕터의 검증 우선순위 목록을 확인한다.
 2. **호출 시 지정된 챕터 하나만** 초고를 읽으며 검증 대상을 추출한다.
    - 수치, 통계, 날짜, 고유명사, 법률·제도 관련 내용, 인용구
 3. 각 항목을 조사 노트의 출처와 대조하여 일치 여부를 확인한다.
@@ -29,12 +29,12 @@
    - `[확인됨]` — 출처와 일치하거나 교차 검증 완료
    - `[수정 필요]` — 오류 발견, 올바른 정보와 출처를 함께 제시
    - `[미확인]` — 검증 불가, 삭제 또는 불확실성 명시 권고
-6. 챕터별 검증 결과를 `workflows/fact-check-report.md`에 기록하고, 요약을 이 파일(`02-review.md`) 하단에 추가한다.
-7. **마지막 챕터 완료 후** `workflows/handoff/factchecker-to-reviewer.md`에 검증 결과 요약을 작성한다.
+6. 챕터별 검증 결과를 `.claude/skills/workflows/fact-check-report.md`에 기록하고, 요약을 이 파일(`02-review.md`) 하단에 추가한다.
+7. **마지막 챕터 완료 후** `.claude/skills/workflows/handoff/factchecker-to-reviewer.md`에 검증 결과 요약을 작성한다.
 
 ### 출력 파일
-- `workflows/fact-check-report.md` — 항목별 검증 결과 보고서
-- `workflows/handoff/factchecker-to-reviewer.md` — 검증 결과 요약 (마지막 챕터 완료 후)
+- `.claude/skills/workflows/fact-check-report.md` — 항목별 검증 결과 보고서
+- `.claude/skills/workflows/handoff/factchecker-to-reviewer.md` — 검증 결과 요약 (마지막 챕터 완료 후)
 - 이 파일(`02-review.md`) 하단에 작업 기록 추가
 
 ### 다음 단계 진행 조건
@@ -59,12 +59,12 @@
 `reviewer`
 
 ### 입력 자료
-- `workflows/handoff/factchecker-to-reviewer.md` — 검증 결과 요약 및 필수 검토 항목
+- `.claude/skills/workflows/handoff/factchecker-to-reviewer.md` — 검증 결과 요약 및 필수 검토 항목
 - `output/BOOK.md` — 초고 본문
-- `workflows/fact-check-report.md` — 상세 검증 보고서 (선택)
+- `.claude/skills/workflows/fact-check-report.md` — 상세 검증 보고서 (선택)
 
 ### 작업 순서
-1. `workflows/handoff/factchecker-to-reviewer.md`에서 우선 검토 항목을 파악한다.
+1. `.claude/skills/workflows/handoff/factchecker-to-reviewer.md`에서 우선 검토 항목을 파악한다.
 2. 초고 전체를 독자 관점에서 통독한다.
 3. 아래 네 항목을 기준으로 검토 의견을 작성한다.
    - **논리 구조**: 챕터 간 흐름, 주장과 근거의 연결, 결론의 타당성
@@ -73,14 +73,14 @@
    - **완성도**: 누락된 내용, 지나치게 단순화된 설명, 중복 서술
 4. 검토 의견은 챕터별로 구체적인 쪽/섹션을 지목하여 작성한다.
 5. 전체 총평(강점 / 보완 필요 사항 / 우선 수정 항목)을 작성한다.
-6. 검토 의견을 `workflows/review-report.md`에 작성한다.
+6. 검토 의견을 `.claude/skills/workflows/review-report.md`에 작성한다.
 7. 원고를 직접 수정하지 않는다.
-8. `workflows/handoff/reviewer-to-editor.md`에 editor 필수 처리 항목·권고 항목·유지 항목을 작성한다.
+8. `.claude/skills/workflows/handoff/reviewer-to-editor.md`에 editor 필수 처리 항목·권고 항목·유지 항목을 작성한다.
 9. 작업 기록을 이 파일(`02-review.md`) 하단에 추가한다.
 
 ### 출력 파일
-- `workflows/review-report.md` — 챕터별 검토 의견 및 총평
-- `workflows/handoff/reviewer-to-editor.md` — editor 전달용 수정 지시
+- `.claude/skills/workflows/review-report.md` — 챕터별 검토 의견 및 총평
+- `.claude/skills/workflows/handoff/reviewer-to-editor.md` — editor 전달용 수정 지시
 - 이 파일(`02-review.md`) 하단에 작업 기록 추가
 
 ### 다음 단계 진행 조건
@@ -103,26 +103,26 @@
 `editor`
 
 ### 입력 자료
-- `workflows/handoff/reviewer-to-editor.md` — 필수 처리 항목·권고 항목·유지 항목
+- `.claude/skills/workflows/handoff/reviewer-to-editor.md` — 필수 처리 항목·권고 항목·유지 항목
 - `output/BOOK.md` — 초고 본문
-- `workflows/review-report.md` — 상세 검토 의견 (선택)
-- `workflows/fact-check-report.md` — 상세 검증 보고서 (선택)
+- `.claude/skills/workflows/review-report.md` — 상세 검토 의견 (선택)
+- `.claude/skills/workflows/fact-check-report.md` — 상세 검증 보고서 (선택)
 
 ### 작업 순서
-1. `workflows/handoff/reviewer-to-editor.md`에서 필수 처리 항목·유지 항목을 먼저 확인한다.
+1. `.claude/skills/workflows/handoff/reviewer-to-editor.md`에서 필수 처리 항목·유지 항목을 먼저 확인한다.
 2. `fact-checker`의 `[수정 필요]` 항목을 올바른 정보로 수정한다.
 3. `reviewer`의 챕터별 검토 의견을 반영하여 본문을 수정한다.
    - 논리 구조 재구성, 문장 다듬기, 중복 제거, 누락 내용 보완
 4. `[미확인]` 항목은 삭제하거나 불확실성을 명시하는 문구로 대체한다.
-5. 수정 사항을 추적할 수 있도록 `workflows/edit-log.md`에 변경 내역을 기록한다.
+5. 수정 사항을 추적할 수 있도록 `.claude/skills/workflows/edit-log.md`에 변경 내역을 기록한다.
 6. 수정 완료 후 `output/BOOK.md`를 업데이트한다.
-7. `workflows/handoff/editor-to-publisher.md`에 편집 완료 상태·포맷 주의 사항·차기 권고 사항을 작성한다.
+7. `.claude/skills/workflows/handoff/editor-to-publisher.md`에 편집 완료 상태·포맷 주의 사항·차기 권고 사항을 작성한다.
 8. 작업 기록을 이 파일(`02-review.md`) 하단에 추가한다.
 
 ### 출력 파일
 - `output/BOOK.md` — 수정된 원고 (초고 대체)
-- `workflows/edit-log.md` — 수정 내역 로그
-- `workflows/handoff/editor-to-publisher.md` — publisher 전달용 특이 사항
+- `.claude/skills/workflows/edit-log.md` — 수정 내역 로그
+- `.claude/skills/workflows/handoff/editor-to-publisher.md` — publisher 전달용 특이 사항
 - 이 파일(`02-review.md`) 하단에 작업 기록 추가
 
 ### 다음 단계 진행 조건
@@ -147,7 +147,7 @@
 
 ## [2026-10-24] fact-checker 작업 완료
 
-- 작업 내용: `output/BOOK.md` 초고 전체(3개 챕터, 17개 검증 항목)에 대해 researcher 조사 노트 대조 및 웹 교차 검색을 통한 사실 검증 완료. 결과를 `workflows/fact-check-report.md`에 기록.
+- 작업 내용: `output/BOOK.md` 초고 전체(3개 챕터, 17개 검증 항목)에 대해 researcher 조사 노트 대조 및 웹 교차 검색을 통한 사실 검증 완료. 결과를 `.claude/skills/workflows/fact-check-report.md`에 기록.
 - 주요 결정 사항:
   - 검증 항목 17건 중 확인됨 13건, 수정 필요 2건, 조건부 확인됨 1건, 미확인 1건으로 분류.
   - [수정 필요 1] 1장 1.1 — 노트북 DC 전압 "19V" 단일 표기 오류. 주요 브랜드 다수가 20V 사용. "DC 19~20V"로 수정 권고.
@@ -156,26 +156,26 @@
   - [조건부 확인] 1장 1.1 — 스마트폰 DC 5V. USB-A 기준 정확하나 USB-C PD 시대에는 보완 설명 권고.
   - 수정 필요 항목 비율 약 12% (2/17)로, 30% 기준 미달. writer 재작업 통보 불필요.
 - 다음 에이전트 전달 사항:
-  - reviewer는 `workflows/fact-check-report.md`의 [수정 필요] 2건과 [미확인] 1건을 검토 의견에 반드시 반영할 것.
+  - reviewer는 `.claude/skills/workflows/fact-check-report.md`의 [수정 필요] 2건과 [미확인] 1건을 검토 의견에 반드시 반영할 것.
   - editor는 수정 시 노트북 전압 표기(19V → 19~20V), LPS 효율 범위(20~50% → 30~60%), 전자레인지 비유 수정 또는 주석 추가를 우선 처리할 것.
 
 ## [2026-10-24] reviewer 작업 완료
 
-- 작업 내용: `output/BOOK.md` 초고 전체(3개 챕터)를 독자 관점에서 통독하고, fact-checker 보고서의 수정 필요 항목을 포함하여 논리 구조·문체 일관성·가독성·완성도 네 기준으로 검토 의견 작성. 결과를 `workflows/review-report.md`에 기록.
+- 작업 내용: `output/BOOK.md` 초고 전체(3개 챕터)를 독자 관점에서 통독하고, fact-checker 보고서의 수정 필요 항목을 포함하여 논리 구조·문체 일관성·가독성·완성도 네 기준으로 검토 의견 작성. 결과를 `.claude/skills/workflows/review-report.md`에 기록.
 - 주요 결정 사항:
   - fact-checker의 [수정 필요] 2건(노트북 전압, LPS 효율)과 [미확인] 1건(전자레인지-라디오 비유) 모두 검토 의견에 반영. 세 항목 모두 중요도 '상'으로 분류하여 editor 우선 처리 대상으로 지정.
   - 1장 1.1의 "충전기가 뜨거워지는 이유" 서술이 현재 SMPS 충전기와 혼동될 수 있음을 추가 지적. 역사적·범위적 맥락 한정 문구 추가 권고.
   - 2.2절 볼드 처리, 소제목 형식 혼재 등 문체 일관성 문제 발견. 전체 통일 권고.
   - 인덕터(코일) 누락, 3장 분량 부족, 전체 결론 단락 부재 등 완성도 보완 항목 다수 도출.
 - 다음 에이전트 전달 사항:
-  - editor는 `workflows/review-report.md`의 "반드시 수정 필요 항목" 5건을 최우선으로 처리할 것.
+  - editor는 `.claude/skills/workflows/review-report.md`의 "반드시 수정 필요 항목" 5건을 최우선으로 처리할 것.
   - 특히 전자레인지-라디오 비유는 기술적으로 부정확하므로 반드시 교체할 것(형광등·인버터 모터 비유 권고).
   - 권고 수정 항목(소제목 통일, 볼드 처리 통일, 인덕터 언급, 결론 단락 추가 등)도 가능한 범위 내에서 반영할 것.
   - 유지 권고 항목(챕터별 Why-What 도입, 일상 비유, 3단 흐름 구조)은 수정 시 훼손하지 않도록 주의할 것.
 
 ## [2026-10-24] editor 작업 완료
 
-- 작업 내용: fact-checker의 [수정 필요] 2건·[미확인] 1건 및 reviewer의 반드시 수정 항목 5건을 포함한 총 14개 수정 사항을 `output/BOOK.md`에 반영. 수정 내역을 `workflows/edit-log.md`에 챕터별로 기록.
+- 작업 내용: fact-checker의 [수정 필요] 2건·[미확인] 1건 및 reviewer의 반드시 수정 항목 5건을 포함한 총 14개 수정 사항을 `output/BOOK.md`에 반영. 수정 내역을 `.claude/skills/workflows/edit-log.md`에 챕터별로 기록.
 - 주요 결정 사항:
   - [사실 오류 수정] 1장 1.1 노트북 전압 "DC 19V" → "DC 19~20V"
   - [사실 오류 수정] 1장 1.1 LPS 효율 "20~50%" → "40~50%"
@@ -195,7 +195,7 @@
 
 ## [2026-10-24] fact-checker 재검증 — 챕터 1 (현행 초고 v2 기준)
 
-- 작업 내용: `output/BOOK.md` 현행 v2 기준으로 챕터 1(1.1 교류·직류 차이, 1.2 LPS 한계와 SMPS 등장) 6개 검증 항목에 대해 웹 교차 검색을 통한 재검증 완료. 결과를 `workflows/fact-check-report.md`에 신규 섹션으로 기록.
+- 작업 내용: `output/BOOK.md` 현행 v2 기준으로 챕터 1(1.1 교류·직류 차이, 1.2 LPS 한계와 SMPS 등장) 6개 검증 항목에 대해 웹 교차 검색을 통한 재검증 완료. 결과를 `.claude/skills/workflows/fact-check-report.md`에 신규 섹션으로 기록.
 - 주요 결정 사항:
   - 검증 항목 6건 전원 "정확" 판정. 오류 0건, 불확실 0건.
   - 한국 콘센트 220V/60Hz: 한국전력 공식 규격 및 복수 출처로 확인됨.
@@ -208,7 +208,7 @@
 
 ## [2026-10-24] fact-checker 재검증 — 챕터 2 (현행 초고 v2 기준)
 
-- 작업 내용: `output/BOOK.md` 현행 v2 기준으로 챕터 2(2.1 스위칭의 개념과 PWM, 2.2 핵심 부품의 역할) 6개 검증 항목에 대해 웹 교차 검색을 통한 재검증 완료. 결과를 `workflows/fact-check-report.md`에 신규 섹션으로 기록.
+- 작업 내용: `output/BOOK.md` 현행 v2 기준으로 챕터 2(2.1 스위칭의 개념과 PWM, 2.2 핵심 부품의 역할) 6개 검증 항목에 대해 웹 교차 검색을 통한 재검증 완료. 결과를 `.claude/skills/workflows/fact-check-report.md`에 신규 섹션으로 기록.
 - 주요 결정 사항:
   - 검증 항목 6건 중 정확 4건, 조건부 정확 2건. 오류 0건, 불확실 0건.
   - 소비자용 SMPS 스위칭 주파수 50~500kHz: 조건부 정확. 현재 주류 소비자 제품 중심대는 100~500kHz이며, 50kHz는 구형·저비용 제품에 해당. 본문 단서 병기("소비자용 제품 기준", "제품 유형과 설계에 따라 범위가 크게 다를 수 있다")로 허용 범위 내임.
@@ -221,7 +221,7 @@
 
 ## [2026-10-24] fact-checker 재검증 — 챕터 3 (현행 초고 v2 기준)
 
-- 작업 내용: `output/BOOK.md` 현행 v2 기준으로 챕터 3(3.1 실생활 속 SMPS 적용 사례, 3.2 EMI와 안전 인증 기준) 5개 검증 항목에 대해 웹 교차 검색을 통한 재검증 완료. 결과를 `workflows/fact-check-report.md`에 신규 섹션으로 기록. 이번이 마지막 챕터 검증이며, `workflows/handoff/factchecker-to-reviewer.md`에 3개 챕터 전체 요약 및 reviewer 필수 검토 항목을 작성함.
+- 작업 내용: `output/BOOK.md` 현행 v2 기준으로 챕터 3(3.1 실생활 속 SMPS 적용 사례, 3.2 EMI와 안전 인증 기준) 5개 검증 항목에 대해 웹 교차 검색을 통한 재검증 완료. 결과를 `.claude/skills/workflows/fact-check-report.md`에 신규 섹션으로 기록. 이번이 마지막 챕터 검증이며, `.claude/skills/workflows/handoff/factchecker-to-reviewer.md`에 3개 챕터 전체 요약 및 reviewer 필수 검토 항목을 작성함.
 - 주요 결정 사항:
   - 검증 항목 5건 중 정확 3건, 조건부 정확 2건. 오류 0건, 불확실 0건.
   - SMPS 실생활 적용 사례(스마트폰 충전기·노트북 어댑터·PC 파워서플라이·LED 조명·공유기·셋톱박스): 정확. 열거된 모든 기기가 SMPS 방식 채용임을 나무위키·디바이스마트·LED 전원 판매처 등 복수 출처에서 확인됨.
@@ -232,7 +232,7 @@
 - 다음 에이전트(reviewer) 전달 사항:
   - 챕터 3 검증 결과 오류 0건. 수정 의무 항목은 없음.
   - 단, 3.2절에 "[검증 필요]" 태그가 그대로 잔존하고 있음. 이 태그는 반드시 제거하고 내용을 본문 문장으로 편입하거나 괄호 주석으로 전환해야 함.
-  - 3개 챕터 전체 검증 완료: 오류 0건, 조건부 정확 4건, 잔존 태그 1건(3.2 CE 마크). 세부 내용은 `workflows/handoff/factchecker-to-reviewer.md` 참조.
+  - 3개 챕터 전체 검증 완료: 오류 0건, 조건부 정확 4건, 잔존 태그 1건(3.2 CE 마크). 세부 내용은 `.claude/skills/workflows/handoff/factchecker-to-reviewer.md` 참조.
 
 ## Fact-Check 보고서 요약 — 2026-10-24 (현행 초고 v2 기준, 챕터 3)
 
@@ -258,7 +258,7 @@
 
 ## [2026-10-24] reviewer 재검토 작업 완료 (v2 기준)
 
-- 작업 내용: `output/BOOK.md` 현행 v2(editor 수정 반영본, fact-checker 재검증 완료본)를 독자 관점에서 전체 통독. fact-checker 재검증 보고서(`workflows/handoff/factchecker-to-reviewer.md`) 확인 후 흐름·논리·문체·가독성·구조 다섯 기준으로 재검토 의견 작성. 결과를 `workflows/review-report.md`에 v2 재검토 섹션으로 추가 기록. `workflows/handoff/reviewer-to-editor.md` 업데이트 완료.
+- 작업 내용: `output/BOOK.md` 현행 v2(editor 수정 반영본, fact-checker 재검증 완료본)를 독자 관점에서 전체 통독. fact-checker 재검증 보고서(`.claude/skills/workflows/handoff/factchecker-to-reviewer.md`) 확인 후 흐름·논리·문체·가독성·구조 다섯 기준으로 재검토 의견 작성. 결과를 `.claude/skills/workflows/review-report.md`에 v2 재검토 섹션으로 추가 기록. `.claude/skills/workflows/handoff/reviewer-to-editor.md` 업데이트 완료.
 - 주요 결정 사항:
   - v2 원고에서 사실 오류 0건 확인(fact-checker 재검증 결과 반영). reviewer는 논리 구조·문체 일관성·가독성·완성도에 집중하여 검토 수행.
   - [반드시 수정 필요 — 중요도 상] 3.2절 `[검증 필요]` 태그 잔존: editor 수정에서 누락된 항목. CE 마크 설명 직후 태그를 괄호 주석으로 전환 필요. 예시: "(단, 의료기기·기계류 등 위험도 높은 제품군은 공인 기관의 제3자 검증이 추가로 요구된다)"
@@ -267,7 +267,7 @@
   - [권고 — 중요도 중] 2.2절 끝 3장 연결 브리지 문장 추가, 3.1절 사례 나열에 SMPS 특성 연결 설명 보완, 2.1절 스위칭 주파수 정밀화(50~500kHz → 100~500kHz 중심대 우선 표기), 1.2절 LPS 전압 낭비 단서 추가.
   - [유지 권고] 챕터별 Why-What 도입 문구, 일상 비유(파도·강물·기어·수문·저수지·선풍기·형광등), 각 챕터 3단 흐름 구조, 2.2절 통합 요약 문장 모두 유지.
 - 다음 에이전트(editor) 전달 사항:
-  - `workflows/handoff/reviewer-to-editor.md`에 반드시 수정 필요 3건, 권고 수정 5건, 유지 권고 5건이 기록되어 있다.
+  - `.claude/skills/workflows/handoff/reviewer-to-editor.md`에 반드시 수정 필요 3건, 권고 수정 5건, 유지 권고 5건이 기록되어 있다.
   - 반드시 수정 필요 3건(CE 태그 전환, researcher 출처 처리, 소제목 통일 확인)을 최우선으로 처리할 것.
 
 ---

@@ -64,8 +64,8 @@
 | 3장 SMPS의 응용과 안전 | 2 | 완료 | 1 (CE 마크 절차) |
 
 ## 참고: 조사 출처 파일
-- 자세한 출처는 `workflows/research-notes.md` 참조 (필요 시만)
-- 인수인계 요약은 `workflows/handoff/researcher-to-writer.md` 참조
+- 자세한 출처는 `.claude/skills/workflows/research-notes.md` 참조 (필요 시만)
+- 인수인계 요약은 `.claude/skills/workflows/handoff/researcher-to-writer.md` 참조
 
 ---
 

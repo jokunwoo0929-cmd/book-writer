@@ -1,6 +1,6 @@
 # 인수인계: researcher → writer
 
-> 이 파일의 목적: writer가 초고 작성에 필요한 핵심 수치·비유·주의 사항만 전달한다. 전체 조사 노트(`workflows/research-notes.md`)를 읽지 않아도 작성을 시작할 수 있도록 압축한다.
+> 이 파일의 목적: writer가 초고 작성에 필요한 핵심 수치·비유·주의 사항만 전달한다. 전체 조사 노트(`.claude/skills/workflows/research-notes.md`)를 읽지 않아도 작성을 시작할 수 있도록 압축한다.
 >
 > 독자(대학교 1~2학년생)가 수식 없이 SMPS 원리를 이해하도록(Why) 비유 중심으로 서술하며, 각 챕터 첫머리에 Why 문장을 포함한다(What).
 
@@ -11,7 +11,7 @@
 - 책 제목: 전기, 어렵지 않아요: SMPS로 배우는 스위칭 전원공급장치의 기본 원리
 - 총 분량 목표: 약 1,500자 (챕터 1 약 600자, 챕터 2 약 600자, 챕터 3 약 300자)
 - 집필 방침: 전문 수식 배제, 비유 중심 서술, 각 챕터 첫머리에 Why 문장 포함
-- 상세 조사 자료: `workflows/research-notes.md` (선택적 참조)
+- 상세 조사 자료: `.claude/skills/workflows/research-notes.md` (선택적 참조)
 
 ---
 
