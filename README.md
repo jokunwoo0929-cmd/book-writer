@@ -76,7 +76,7 @@
 
 - 주제·독자층·목적을 정의하고 전체 목차를 작성
 - 챕터별 핵심 메시지와 분량 목표를 결정
-- `workflows/handoff/planner-to-researcher.md`에 조사 요청 항목 전달
+- `.claude/skills/workflows/handoff/planner-to-researcher.md`에 조사 요청 항목 전달
 - **도구**: Read, Write, Edit
 - **출력**: `output/BOOK.md`(목차), `handoff/planner-to-researcher.md`
 
@@ -87,7 +87,7 @@
 - 공신력 있는 출처 우선, 최소 2개 출처 교차 확인
 - 불확실 항목은 `[미확인]` 태그로 명시
 - **도구**: Read, Write, WebSearch, WebFetch
-- **출력**: `workflows/research-notes.md`, `handoff/researcher-to-writer.md`
+- **출력**: `.claude/skills/workflows/research-notes.md`, `handoff/researcher-to-writer.md`
 
 ### 3. writer
 > **역할**: 조사 자료를 바탕으로 챕터별 초고를 작성한다. 원고를 새로 생성하는 **유일한 에이전트**.
@@ -105,7 +105,7 @@
 - **챕터마다 별도 호출** — 단일 호출로 전체를 검증하지 않음
 - 검증 결과를 `[확인됨]` / `[수정 필요]` / `[미확인]` 3등급으로 분류
 - **도구**: Read, Write, WebSearch, WebFetch
-- **출력**: `workflows/fact-check-report.md`, 마지막 챕터 후 `handoff/factchecker-to-reviewer.md`
+- **출력**: `.claude/skills/workflows/fact-check-report.md`, 마지막 챕터 후 `handoff/factchecker-to-reviewer.md`
 
 ### 5. reviewer
 > **역할**: 초고 전체를 독자 관점에서 검토하고 의견서를 작성한다. 원고 직접 수정 불가.
@@ -113,7 +113,7 @@
 - `handoff/factchecker-to-reviewer.md`로 우선 검토 항목 파악
 - 흐름·논리·문체·가독성·구조 5개 항목 평가
 - **도구**: Read, Write (Edit 없음 — 의도적 권한 제한)
-- **출력**: `workflows/review-report.md`, `handoff/reviewer-to-editor.md`
+- **출력**: `.claude/skills/workflows/review-report.md`, `handoff/reviewer-to-editor.md`
 
 ### 6. editor
 > **역할**: reviewer와 fact-checker의 의견을 원고에 반영하여 수정한다.
@@ -122,7 +122,7 @@
 - reviewer가 유지 권고한 항목은 수정하지 않음
 - 챕터 전체 재작성 수준이면 writer에게 위임
 - **도구**: Read, Write, Edit
-- **출력**: `output/BOOK.md`(수정), `workflows/edit-log.md`, `handoff/editor-to-publisher.md`
+- **출력**: `output/BOOK.md`(수정), `.claude/skills/workflows/edit-log.md`, `handoff/editor-to-publisher.md`
 
 ### 7. publisher
 > **역할**: 편집 완료 원고를 출판 규격에 맞게 정리하고 최종 산출물 3개를 생성한다. 내용 수정 불가.
@@ -136,7 +136,7 @@
 
 ## 3단계 워크플로우
 
-### 1단계: 기획 ~ 초고 작성 (`workflows/01-writing.md`)
+### 1단계: 기획 ~ 초고 작성 (`.claude/skills/workflows/01-writing.md`)
 
 ```
 STEP 1  planner      목차 + 챕터별 핵심 메시지 + 조사 요청 항목 확정
@@ -152,7 +152,7 @@ STEP 3  writer × N   챕터 하나씩 초고 작성 (챕터 수만큼 별도 �
            └─▶ handoff/writer-to-factchecker.md (마지막 챕터 완료 후)
 ```
 
-### 2단계: 검토 ~ 편집 (`workflows/02-review.md`)
+### 2단계: 검토 ~ 편집 (`.claude/skills/workflows/02-review.md`)
 
 ```
 STEP 4  fact-checker × N   챕터별 사실 검증 (챕터 수만큼 별도 호출)
@@ -168,7 +168,7 @@ STEP 6  editor         검증·검토 의견 반영, 원고 수정
            └─▶ handoff/editor-to-publisher.md
 ```
 
-### 3단계: 최종 출판 (`workflows/03-finalize.md`)
+### 3단계: 최종 출판 (`.claude/skills/workflows/03-finalize.md`)
 
 ```
 STEP 7  publisher      포맷 정리 + TOC.md + SUMMARY.md 생성
@@ -225,31 +225,31 @@ book-writer/
 ├── CLAUDE.md                       # 공통 지침 (오케스트레이터 규칙 포함)
 │
 ├── .claude/
-│   └── agents/                     # 에이전트별 개별 지침
-│       ├── planner.md
-│       ├── researcher.md
-│       ├── writer.md
-│       ├── fact-checker.md
-│       ├── reviewer.md
-│       ├── editor.md
-│       └── publisher.md
-│
-├── workflows/                      # 단계별 절차 및 작업 기록
-│   ├── 01-writing.md               # 1단계 절차 + 기록 (planner·researcher·writer)
-│   ├── 02-review.md                # 2단계 절차 + 기록 (fact-checker·reviewer·editor)
-│   ├── 03-finalize.md              # 3단계 절차 + 기록 (publisher)
-│   ├── research-notes.md           # researcher 상세 조사 노트
-│   ├── fact-check-report.md        # fact-checker 상세 검증 보고서
-│   ├── review-report.md            # reviewer 검토 의견서
-│   ├── edit-log.md                 # editor 수정 내역 로그
-│   ├── final-check.md              # publisher 최종 점검 결과
-│   └── handoff/                    # 에이전트 간 인수인계 파일 (최소 정보)
-│       ├── planner-to-researcher.md
-│       ├── researcher-to-writer.md
-│       ├── writer-to-factchecker.md
-│       ├── factchecker-to-reviewer.md
-│       ├── reviewer-to-editor.md
-│       └── editor-to-publisher.md
+│   ├── agents/                     # 에이전트별 개별 지침
+│   │   ├── planner.md
+│   │   ├── researcher.md
+│   │   ├── writer.md
+│   │   ├── fact-checker.md
+│   │   ├── reviewer.md
+│   │   ├── editor.md
+│   │   └── publisher.md
+│   └── skills/
+│       └── workflows/              # 단계별 절차 및 작업 기록
+│           ├── 01-writing.md       # 1단계 절차 + 기록 (planner·researcher·writer)
+│           ├── 02-review.md        # 2단계 절차 + 기록 (fact-checker·reviewer·editor)
+│           ├── 03-finalize.md      # 3단계 절차 + 기록 (publisher)
+│           ├── research-notes.md   # researcher 상세 조사 노트
+│           ├── fact-check-report.md# fact-checker 상세 검증 보고서
+│           ├── review-report.md    # reviewer 검토 의견서
+│           ├── edit-log.md         # editor 수정 내역 로그
+│           ├── final-check.md      # publisher 최종 점검 결과
+│           └── handoff/            # 에이전트 간 인수인계 파일 (최소 정보)
+│               ├── planner-to-researcher.md
+│               ├── researcher-to-writer.md
+│               ├── writer-to-factchecker.md
+│               ├── factchecker-to-reviewer.md
+│               ├── reviewer-to-editor.md
+│               └── editor-to-publisher.md
 │
 └── output/                         # 최종 산출물
     ├── BOOK.md                     # 최종 본문 (version 1.0.0, status: final)
@@ -295,15 +295,15 @@ Claude Code에서 오케스트레이터 역할로 다음 순서로 에이전트�
 ✅ 권장: 읽어야 할 파일 경로만 지정, 에이전트가 직접 파일 읽기
 
 예시:
-"workflows/handoff/planner-to-researcher.md를 읽어 조사 항목을 확인하고
- workflows/research-notes.md에 챕터별 조사 결과를 정리하세요."
+".claude/skills/workflows/handoff/planner-to-researcher.md를 읽어 조사 항목을 확인하고
+ .claude/skills/workflows/research-notes.md에 챕터별 조사 결과를 정리하세요."
 ```
 
 ### 새 주제로 실행하기
 
 1. `output/BOOK.md` 기존 내용은 planner 호출 시 덮어씌워집니다.
-2. `workflows/handoff/` 파일들은 각 에이전트가 실행 시 자동으로 갱신합니다.
-3. `workflows/*.md`의 작업 기록은 누적 추가됩니다 (삭제하지 않아도 됩니다).
+2. `.claude/skills/workflows/handoff/` 파일들은 각 에이전트가 실행 시 자동으로 갱신합니다.
+3. `.claude/skills/workflows/*.md`의 작업 기록은 누적 추가됩니다 (삭제하지 않아도 됩니다).
 
 ---
 
