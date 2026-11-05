@@ -63,17 +63,24 @@ book-writer/
 │   ├── reviewer.md
 │   ├── editor.md
 │   └── publisher.md
-├── .claude/skills/workflows/  # 단계별 작업 기록
-│   ├── 01-writing.md          # 기획~초고 작성 절차 및 기록
-│   ├── 02-review.md           # 검토~편집 절차 및 기록
-│   ├── 03-finalize.md         # 최종 출판 절차 및 기록
-│   └── handoff/               # 에이전트 간 인수인계 파일 (필요한 정보만 압축)
-│       ├── planner-to-researcher.md
-│       ├── researcher-to-writer.md
-│       ├── writer-to-factchecker.md
-│       ├── factchecker-to-reviewer.md
-│       ├── reviewer-to-editor.md
-│       └── editor-to-publisher.md
+├── .claude/skills/
+│   ├── skill.md               # skills 폴더 구성 안내
+│   └── workflows/             # 단계별 작업 기록
+│       ├── 01-writing.md      # 기획~초고 작성 절차 및 기록
+│       ├── 02-review.md       # 검토~편집 절차 및 기록
+│       ├── 03-finalize.md     # 최종 출판 절차 및 기록
+│       ├── edit-log.md        # 편집 이력
+│       ├── fact-check-report.md # 팩트체크 보고서
+│       ├── final-check.md     # 최종 점검 기록
+│       ├── research-notes.md  # 조사 메모
+│       ├── review-report.md   # 검토 보고서
+│       └── handoff/           # 에이전트 간 인수인계 파일 (필요한 정보만 압축)
+│           ├── planner-to-researcher.md
+│           ├── researcher-to-writer.md
+│           ├── writer-to-factchecker.md
+│           ├── factchecker-to-reviewer.md
+│           ├── reviewer-to-editor.md
+│           └── editor-to-publisher.md
 └── output/
     ├── TOC.md                 # 목차 독립 파일 (publisher 생성)
     ├── SUMMARY.md             # 챕터별 요약 (publisher 생성)
