@@ -234,6 +234,7 @@ book-writer/
 │   │   ├── editor.md
 │   │   └── publisher.md
 │   └── skills/
+│       ├── skill.md                # skills 폴더 구성 안내
 │       └── workflows/              # 단계별 절차 및 작업 기록
 │           ├── 01-writing.md       # 1단계 절차 + 기록 (planner·researcher·writer)
 │           ├── 02-review.md        # 2단계 절차 + 기록 (fact-checker·reviewer·editor)
@@ -254,7 +255,8 @@ book-writer/
 └── output/                         # 최종 산출물
     ├── BOOK.md                     # 최종 본문 (version 1.0.0, status: final)
     ├── TOC.md                      # 목차 독립 파일 (앵커 링크 포함)
-    └── SUMMARY.md                  # 챕터별 1~2문장 요약
+    ├── SUMMARY.md                  # 챕터별 1~2문장 요약
+    └── source-story.md             # 원본 스토리 자료
 ```
 
 ---
